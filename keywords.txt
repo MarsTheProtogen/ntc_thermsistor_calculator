@@ -1,2 +1,2 @@
-ntc_thermsistor_calculator	KEYWORD1;
+ntcThermsistorCalculator	KEYWORD1;
 calculate	KEYWORD2;
