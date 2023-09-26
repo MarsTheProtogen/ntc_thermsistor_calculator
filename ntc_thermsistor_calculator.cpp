@@ -1,4 +1,6 @@
-#include <Arduino.h>
+#include "Arduino.h"
+
+#include "ntcThermsistorCalculator.h"
 
 /*////////////////////////////////////////////////////////////////////////
 //                                                                      //
@@ -8,39 +10,20 @@
 //                                                                      //
 ////////////////////////////////////////////////////////////////////////*/
 
-float temperature = 0.0;
-
-int probe = A1;
-
-void setup()
+ntcThermsistorCalculator::ntcThermsistorCalculator()
 {
-
-  // set probe pin (A1) to input
-  pinMode(probe, INPUT);
 }
 
-// the listed resistance of ntc at To (typicaly 25c)
-long Ro = 100000;
-
-// the temperature Ro is listed at (typicaly 25c), found in the datasheet
-//  NOTE: + 273.15 to convert c to k
-float To = 25.0 + 273.15;
-
-// resistance of resistor in series with NTC [ohms]
-long R1 = 9060;
-
-// beta, greek symbol for b(beta), found in the part datasheet,
-//  sometimes also seen as a capital B
-float B = 4014.0;
-
-// resistance of the ntc, this is a float
-// because it is being calculated, not stored
-float R2 = 100000.0;
-
-// NOTE: aurduino max bit depth of 10 from analogRead() vs 12 in pi pico
-
-float rt(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth = 10)
+float ntcThermsistorCalculator::calculate(int pin, float Vin = 5, float To, long Ro, int B, long R1, int bit_depth = 10)
 {
+
+  _pin = pin;
+  _Vin = Vin;
+  _To = To;
+  _Ro = Ro;
+  _B = B;
+  _R1 = R1;
+  _bit_depth = bit_depth;
 
   // function use ex:
   // temperature = rt(probe, 5.0,  To,  Ro,  B,  R1, 10);
@@ -56,17 +39,20 @@ float rt(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth = 
   //                                                                                                  //
   ////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
+  // set Analog pin to input
+  pinMode(_pin, INPUT);
+
   // convert analog read into voltage
   // pow(2, bit_depth) converts bit depth to max value
-  float Vout = ((Vin / (pow(2, bit_depth))) * (analogRead(pin) + 1.0));
+  float Vout = ((_Vin / (pow(2, _bit_depth))) * (analogRead(_pin) + 1.0));
 
   // claculate resistance of NTC
-  float R2 = ((Vout * R1) / (Vin - Vout));
+  float R2 = ((Vout * _R1) / (_Vin - Vout));
 
   // calculate temperature using the Steinheart equasion
-  float temp = log((R2 / Ro));
-  temp *= (1.0 / B);
-  temp += (1.0 / To);
+  float temp = log((R2 / _Ro));
+  temp *= (1.0 / _B);
+  temp += (1.0 / _To);
   temp = 1.0 / temp;
 
   // convert kelvin to C (k-273.15=c), surprisingly easy if you've never used it before
@@ -74,11 +60,4 @@ float rt(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth = 
 
   // return temperature as a value
   return (temp);
-}
-
-void loop()
-{
-
-  // using the function to set external value tp the calculated temperatre
-  temperature = rt(probe, 5.0, To, Ro, B, R1, 10);
 }

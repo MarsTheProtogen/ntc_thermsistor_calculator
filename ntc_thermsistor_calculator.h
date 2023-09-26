@@ -7,13 +7,18 @@
 //															//
 ///////////////////////////////////////////////////////////////////////////*/
 
-#ifndef ntc_thermsensor_calculator
-#define ntc_thermsensor_calculator
+#ifndef ntcThermsistorCalculator_h
+#define ntcThermsistorCalculator_h
 
 #include "Arduino.h"
 
-class ntc_thermsistor_calculator
+class ntcThermsistorCalculator
 {
+
+public:
+	ntcThermsistorCalculator();
+	float calculate(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth);
+
 private:
 	int _pin;
 	float _Vin;
@@ -21,11 +26,7 @@ private:
 	long _Ro;
 	int _B;
 	long _R1;
-	int _bit_depth = 10;
-
-public:
-	ntc_thermsistor_calculator();
-	float calculate(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth);
+	int _bit_depth;
 };
 
 #endif // ntc_thermsensor_calculator
