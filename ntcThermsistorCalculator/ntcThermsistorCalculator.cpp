@@ -14,7 +14,7 @@ ntcThermsistorCalculator::ntcThermsistorCalculator()
 {
 }
 
-float ntcThermsistorCalculator::calculate(int pin, float Vin = 5, float To, long Ro, int B, long R1, int bit_depth = 10)
+float ntcThermsistorCalculator::calculate(int pin, float To, long Ro, int B, long R1,float Vin = 5, int bit_depth = 10)
 {
 
   _pin = pin;
