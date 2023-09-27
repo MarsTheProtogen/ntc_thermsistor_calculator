@@ -16,7 +16,7 @@ class ntcThermsistorCalculator
 {
 
 public:
-	ntcThermsistorCalculator();
+
 	float calculate(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth);
 
 private:
