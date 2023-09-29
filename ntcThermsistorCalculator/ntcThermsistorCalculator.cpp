@@ -10,7 +10,12 @@
 //                                                                      //
 ////////////////////////////////////////////////////////////////////////*/
 
+ntcThermsistorCalculator::ntcThermsistorCalculator()
+{
 
+  // prevents errors from being empty
+  int i = 0;
+}
 
 float ntcThermsistorCalculator::calculate(int pin, float To, long Ro, int B, long R1, float Vin = 5, int bit_depth = 10)
 {
