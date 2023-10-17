@@ -1,56 +1,21 @@
 [//]: <> (note, needs to be fixed from html to md)
 
-<!DOCTYPE html>
+## Aurduino NTC Thermistor Reader
 
-
-<HTML>
-
-<head>
-
-  
-</head>
-
-
-
-
-<body>
-
-
-
-
-
-<h1>Aurduino NTC Thermistor Reader</h1>
-
-
-
-<p1>
-
-<span class = "sub-header" >
   
 Code and library for reading temperature of a Negative Thermal Coefficent (NTC) thermsistor 
-<br>Function returns: <i>float <b>temperature</b></i></span><br><br>
-<span class = "paragraph"  >
-This program is designed to be very simple, so it does not calculate the range of
-temperature<br> (based on tolerence of the part), or the self heating effect, 
-as I find it to be neglitable for <br> a majority of use cases.
-</span>
+Function returns: <i>float <b>temperature</b></i>
+ 
+This program is very simple, so it does not calculate the range of temperature
+(based on tolerence of the part), or the self heating effect, 
+as I find it to be neglitable for majority of use cases.
 
-Utilises a voltage divider circut to mesure the temperature (shown below)
-<br><br>
+# Utilises a voltage divider circut to mesure the temperature (shown below)
 
-<p1>
-<br>
+## Inputs (in order) and function syntax
 
-  
-<h2> Inputs (in order) and function syntax</h2>
 A majority of these inputs can be found in the datasheet of your NTC thermsistor
-
-
-<p>
-
-<br>
-<span class ="paragraph" >
-  
+ 
 pin# <b>V</b><sub>out</sub>- connected to aurduino A<sub>n</sub><br>
 
 <b>V</b><sub>s</sub>- input voltage to the circut<br>
@@ -63,9 +28,8 @@ pin# <b>V</b><sub>out</sub>- connected to aurduino A<sub>n</sub><br>
 
 <b>R</b><sub>1</sub>- resistance of <b>R</b><sub>1</sub> in series with the NTC
 
-bit depth  ( optional, 10 bits on Aurduino uno ) <br><br> </span>
+bit depth  ( optional, 10 bits on Aurduino uno ) 
 
-<span class = "NTC_diagram" >
   
 <img src="https://github.com/MarsTheProtogen/NTC-Thermistor-Reader/assets/99446685/e1dd8bfc-d568-43d6-aba8-65da9808127d)https://github.com/MarsTheProtogen/NTC-Thermistor-Reader/assets/99446685/e1dd8bfc-d568-43d6-aba8-65da9808127d" width="200" >
 </span>
