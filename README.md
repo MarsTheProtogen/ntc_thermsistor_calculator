@@ -35,9 +35,8 @@
 
 ### Voltage divider circut to mesure the temperature 
 
-![NTC diagram](/imgs/NTC%20diagam-01.png)
-<img src="https://github.com/MarsTheProtogen/NTC-Thermistor-Reader/assets/99446685/e1dd8bfc-d568-43d6-aba8-65da9808127d)https://github.com/MarsTheProtogen/NTC-Thermistor-Reader/assets/99446685/e1dd8bfc-d568-43d6-aba8-65da9808127d" width="200" >
-</span>
+
+<img src=/imgs/NTC%20diagam-01.png width = 60%>
 
 
 ### <b>syntax</b>
