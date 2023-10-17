@@ -10,7 +10,7 @@ This program is very simple, so it does not calculate the range of temperature
 (based on tolerence of the part), or the self heating effect, 
 as I find it to be neglitable for majority of use cases.
 
-## Utilises a voltage divider circut to mesure the temperature (shown below)
+
 
 ### Inputs (in order) and function syntax
 
@@ -30,6 +30,10 @@ pin# <b>V</b><sub>out</sub>- connected to aurduino A<sub>n</sub><br>
 
 bit depth  ( optional, 10 bits on Aurduino uno ) 
 
+
+
+
+### Voltage divider circut to mesure the temperature 
   
 <img src="https://github.com/MarsTheProtogen/NTC-Thermistor-Reader/assets/99446685/e1dd8bfc-d568-43d6-aba8-65da9808127d)https://github.com/MarsTheProtogen/NTC-Thermistor-Reader/assets/99446685/e1dd8bfc-d568-43d6-aba8-65da9808127d" width="200" >
 </span>
@@ -53,6 +57,8 @@ To use the calculator: instance_name.calculate(int pin, float Vin, float To, lon
 <b>V</b><sub>dd</sub> is the same as: <b>V</b><sub>d</sub>, <b>V</b><sub>0</sub>, <b>V</b>-
 
 It is also important to know that thermsistors have a range of temperatures that they can be used in, you can check this with your datasheet.
+
+There is example of using the library in the examples folder as most other libraries
 
 If you'd like to learn more about NTCs, you may want to start <a href= "https://www.electronics-tutorials.ws/io/thermistors.html">here</a>.
 
