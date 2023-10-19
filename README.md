@@ -42,9 +42,7 @@ bit depth  ( optional, 10 bits on Aurduino uno )
 
 ### <b>syntax</b>
 
-Under setup(): ntc_thermsistor_calculator instance_name()
-
- To use the calculator: instance_name.calculate(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth)
+ntcThermsistorCalculator.calculate(int pin, float Vin, float To, long Ro, int B, long R1, int bit_depth)
 
 
 <br><br>
