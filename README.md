@@ -9,6 +9,11 @@ Function returns: <i>float <b>temperature</b></i>
 This program is very simple, so it does not calculate the range of temperature
 (based on tolerence of the part), or the self heating effect, 
 as I find it to be neglitable for majority of use cases.
+<br><br>
+
+### [Download link for the zip Library](https://github.com/MarsTheProtogen/ntcThermsistorCalculator/blob/3f9f5748b12179a5a9c11175c609fd50e9f29678/ntcThermsistorCalculator.zip)
+
+[https://github.com/MarsTheProtogen/ntcThermsistorCalculator/blob/3f9f5748b12179a5a9c11175c609fd50e9f29678/ntcThermsistorCalculator.zip](https://github.com/MarsTheProtogen/ntcThermsistorCalculator/blob/3f9f5748b12179a5a9c11175c609fd50e9f29678/ntcThermsistorCalculator.zip)
 
 
 <br><br>
